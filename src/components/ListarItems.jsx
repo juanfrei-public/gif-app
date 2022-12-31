@@ -12,6 +12,7 @@ export const ListarItems = ({ items }) => {
   getGifs();
 
   return (
+    
     <>
       <h3>{items}</h3>
     </>
