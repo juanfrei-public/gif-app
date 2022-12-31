@@ -4,7 +4,7 @@ import { ListarItems } from "./components/ListarItems";
 import { Title } from "./components/Title";
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["Bleach", "Naruto"]);
+  const [categories, setCategories] = useState(["Bleach"]);
 
   const onAddCategory = (value) => {
     if (categories.includes(value)) return;
