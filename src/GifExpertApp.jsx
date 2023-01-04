@@ -1,16 +1,14 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { ListarItems } from "./components/ListarItems";
-import { Title } from "./components/Title";
+import { AddCategory, ListarItems, Title } from "./components";
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["Bleach"]);
+  const [categories, setCategories] = useState([]);
 
   const onAddCategory = (value) => {
     if (categories.includes(value)) return;
 
     // Formas de agregar categorias
-    setCategories([...categories, value]);
+    setCategories([value, ...categories]);
     // setCategories( cat => [...cat, value]);
   };
 

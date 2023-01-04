@@ -1,18 +1,30 @@
+import { Item } from "./Item";
+import { Loading, Title } from "../components";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
-import { useEffect } from "react";
-import { getGifs } from "../helpers/getGifs";
 
 export const ListarItems = ({ items }) => {
+  const { images, isLoading } = useFetchGifs(items);
 
-  useEffect( () => {
-    getGifs(items);
-
-  }, [ ]);
-
+  // se pasa a un hook (useFetchGifs)
+  // const [images, setImages] = useState([]);
+  // const getImages = async () => {
+  //   const newImages = await getGifs(items);
+  //   setImages(newImages);
+  // };
+  // useEffect(() => {
+  //   getImages();
+  // }, []);
 
   return (
     <>
-      <h3>{items}</h3>
+      <Title titulo={items} />
+      <Loading isLoading={isLoading} />
+      <div className="card-grid">
+        {images.map((image) => (
+          <Item key={image.id} {...image} />
+        ))}
+      </div>
     </>
   );
 };

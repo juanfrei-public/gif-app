@@ -5,13 +5,13 @@ export const AddCategory = ({ onNewCategory }) => {
 
   const onInputChange = ({ target }) => {
     const value = target.value;
-    setIputValue(value.trim());
+    setIputValue(value);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
     if (inputValue.length <= 1) return;
-    onNewCategory(inputValue);
+    onNewCategory(inputValue.trim());
     setIputValue('');
   };
 
