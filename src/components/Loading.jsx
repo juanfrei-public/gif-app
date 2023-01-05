@@ -1,1 +1,1 @@
-export const Loading = ({ isLoading }) => isLoading && <div> Cargando . . . </div>;
+export const Loading = ({ isLoading }) => isLoading && <div>Cargando...</div>;

@@ -1,7 +1,8 @@
 import { Item } from "./Item";
+import PropTypes from "prop-types";
+
 import { Loading, Title } from "../components";
 import { useFetchGifs } from "../hooks/useFetchGifs";
-
 
 export const ListarItems = ({ items }) => {
   const { images, isLoading } = useFetchGifs(items);
@@ -27,4 +28,8 @@ export const ListarItems = ({ items }) => {
       </div>
     </>
   );
+};
+
+ListarItems.propTypes = {
+  items: PropTypes.string.isRequired,
 };
